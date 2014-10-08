@@ -104,4 +104,45 @@ Universe | 1.16E+077 | 64      | 512    | 103          | 1.34E+154
 Use this table to chose the size of the tag that fits the scope of your name space.
 
 ##Example Code
+The following example code demonstrates some of the ways the `Angle` primitive class can be used:
+
+```java
+    // Create some angles
+    Angle pi = Angle.PI;
+    Angle piOver2 = new Angle(Math.PI / 2.0d);
+    Angle piOver3 = Angle.quotient(pi, 3.0d);
+    Angle piOver4 = Angle.quotient(piOver2, 2.0d);
+    Angle piOver6 = Angle.product(piOver3, 0.5d);
+
+    // Do some angle calculations
+    log.info("The value of pi is: {}", pi);
+    log.info("The value of pi/2 is: {}", piOver2);
+    log.info("The value of pi/3 is: {}", piOver3);
+    log.info("The value of pi/4 is: {}", piOver4);
+    log.info("The value of pi/6 is: {}", piOver6);
+    log.info("The negative of pi/6 is: {}", Angle.negate(piOver6));
+    log.info("The inversion of pi/3 is: {}", Angle.invert(piOver3));
+    log.info("The sum of pi/6 and pi/3 is: {}", Angle.sum(piOver6, piOver3));
+    log.info("The difference of pi/3 and pi/2 is: {}", Angle.difference(piOver3, piOver2));
+    log.info("The sine of pi/6 is: {}", Angle.sine(piOver6));
+    log.info("The cosine of pi/3 is: {}", Angle.cosine(piOver3));
+    log.info("The tangent of pi/2 is: {}", Angle.tangent(piOver2));
+    log.info("The arctangent of 1.0 is: {}", Angle.arctangent(1.0));
+```
+
+It will print the following output:
+
+    The value of pi is: 3.141592653589793
+    The value of pi/2 is: 1.5707963267948966
+    The value of pi/3 is: 1.0471975511965976
+    The value of pi/4 is: 0.7853981633974483
+    The value of pi/6 is: 0.5235987755982988
+    The negative of pi/6 is: -0.5235987755982988
+    The inversion of pi/3 is: -2.0943951023931957
+    The sum of pi/6 and pi/3 is: 1.5707963267948966
+    The difference of pi/3 and pi/2 is: -0.5235987755982989
+    The sine of pi/6 is: 0.49999999999999994
+    The cosine of pi/3 is: 0.5000000000000001
+    The tangent of pi/2 is: Infinity
+    The arctangent of 1.0 is: 0.7853981633974483
 

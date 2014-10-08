@@ -11,7 +11,7 @@ package craterdog.primitives;
 
 
 /**
- * This class encapsulates radian based angles.
+ * This class encapsulates radian based angles. It normalizes all angles to the range [-pi..pi).
  *
  * @author Derk Norton
  */
@@ -241,7 +241,7 @@ public final class Angle implements Comparable<Angle> {
 
 
     /*
-     * This function normalizes the value of an angle to be in the range [0.0..1.0).
+     * This function normalizes the value of an angle to be in the range [-pi..pi).
      */
     static private double normalize(double value) {
         if (Double.isInfinite(value) || Double.isNaN(value))
