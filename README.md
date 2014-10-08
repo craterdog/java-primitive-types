@@ -53,7 +53,7 @@ probabilities. The following functions are supported:
 The `Tag` class provides a way to encapsulate an arbitrary number of random bytes in
 a way that makes it easy to view them.  The following shows some examples of tags:
 
-    Tag size 0: 
+    Tag size 0:
     Tag size 1: 2R
     Tag size 2: 5V00
     Tag size 3: 03V82
@@ -145,4 +145,71 @@ It will print the following output:
     The cosine of pi/3 is: 0.5000000000000001
     The tangent of pi/2 is: Infinity
     The arctangent of 1.0 is: 0.7853981633974483
+
+And this example code demonstrates some of the ways that the `Probability` primitive class can be used:
+
+```java
+    // Create some probabilities
+    Probability always = new Probability(1.0d);
+    Probability threeQuarters = new Probability(0.75d);
+    Probability oneHalf = new Probability(0.5d);
+    Probability oneThird = new Probability(1.0d / 3.0d);
+    Probability oneQuarter = new Probability(0.75d);
+    Probability never = new Probability(0.0d);
+
+    // Do some angle calculations
+    log.info("The value of always is: {}", always);
+    log.info("The value of threeQuarters is: {}", threeQuarters);
+    log.info("The value of oneHalf is: {}", oneHalf);
+    log.info("The value of oneThird is: {}", oneThird);
+    log.info("The value of oneQuarter is: {}", oneQuarter);
+    log.info("The value of never is: {}", never);
+    log.info("The inversion of never is: {}", Probability.not(never));
+    log.info("The intersection of threeQuarters and oneThird is: {}", Probability.and(threeQuarters, oneThird));
+    log.info("The union of oneHalf and oneHalf is: {}", Probability.or(oneHalf, oneHalf));
+    log.info("The difference (sans) of oneHalf and oneHalf is: {}", Probability.sans(oneHalf, oneHalf));
+    log.info("The exclusive union (xor) of oneHalf and oneHalf is: {}", Probability.xor(oneHalf, oneHalf));
+    log.info("The results of a random coin toss are: {}", Probability.coinToss(oneHalf));
+```
+
+It will print the following output:
+
+    The value of always is: 1.0
+    The value of threeQuarters is: 0.75
+    The value of oneHalf is: 0.5
+    The value of oneThird is: 0.3333333333333333
+    The value of oneQuarter is: 0.75
+    The value of never is: 0.0
+    The inversion of never is: 1.0
+    The intersection of threeQuarters and oneThird is: 0.25
+    The union of oneHalf and oneHalf is: 0.75
+    The difference (sans) of oneHalf and oneHalf is: 0.25
+    The exclusive union (xor) of oneHalf and oneHalf is: 0.5
+    The results of a random coin toss are: true
+
+And finally, this code example demonstrates the ways that different size tags can be formatted:
+
+```java
+   // Create some tags
+    Tag small = new Tag(2);
+    Tag medium = new Tag(8);
+    Tag large = new Tag();  // defaults to 20 bytes
+
+    // Display the tags using different numeric bases
+    log.info("The default format of a random two byte tag is: {}", small);
+    log.info("The base 2 format of the same two byte tag is: {}", Base02Utils.encode(small.toBytes()));
+    log.info("The default format of a random eight byte tag is: {}", medium);
+    log.info("The base 16 format of the same eight byte tag is: {}", Base16Utils.encode(medium.toBytes()));
+    log.info("The default format of a random 20 byte tag is: {}", large);
+    log.info("The base 64 format of the same 20 byte tag is: {}", Base64Utils.encode(large.toBytes()));
+```
+
+It will print the following output:
+
+    The default format of a random two byte tag is: QHP0
+    The base 2 format of the same two byte tag is: 1011110000101100
+    The default format of a random eight byte tag is: JDPFKG8AN4PS8
+    The base 16 format of the same eight byte tag is: 8B6CE93D0AA92D94
+    The default format of a random 20 byte tag is: PJMMDBFZJCHPVFYYYY2MJ8C2J76W3S1Y
+    The base 64 format of the same 20 byte tag is: tGlGrd+LIW273veFSKGCic3B5D4=
 

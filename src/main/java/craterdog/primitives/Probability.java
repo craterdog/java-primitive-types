@@ -151,14 +151,14 @@ public final class Probability implements Comparable<Probability> {
 
     /**
      * This function returns the logical disjunction of the specified probabilities.  The value
-     * of the logical disjunction of two probabilities is P + Q - (P * Q).
+     * of the logical disjunction of two probabilities is P + Q - and(P, Q).
      *
      * @param probability1 The first probability.
      * @param probability2 The second probability.
      * @return The logical disjunction of the two probabilities.
      */
     static public Probability or(Probability probability1, Probability probability2) {
-        return new Probability(probability1.value + probability2.value - (probability1.value * probability2.value));
+        return new Probability(probability1.value + probability2.value - and(probability1, probability2).value);
     }
 
 
@@ -171,7 +171,6 @@ public final class Probability implements Comparable<Probability> {
      * @return The logical exclusive disjunction of the two probabilities.
      */
     static public Probability xor(Probability probability1, Probability probability2) {
-        //return or(sans(probability1, probability2), sans(probability2, probability1));
         return new Probability(sans(probability1, probability2).value + sans(probability2, probability1).value);
     }
 
