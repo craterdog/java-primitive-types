@@ -195,21 +195,15 @@ And finally, this code example demonstrates the ways that different size tags ca
     Tag medium = new Tag(8);
     Tag large = new Tag();  // defaults to 20 bytes
 
-    // Display the tags using different numeric bases
+    // Display the tags
     log.info("The default format of a random two byte tag is: {}", small);
-    log.info("The base 2 format of the same two byte tag is: {}", Base02Utils.encode(small.toBytes()));
     log.info("The default format of a random eight byte tag is: {}", medium);
-    log.info("The base 16 format of the same eight byte tag is: {}", Base16Utils.encode(medium.toBytes()));
     log.info("The default format of a random 20 byte tag is: {}", large);
-    log.info("The base 64 format of the same 20 byte tag is: {}", Base64Utils.encode(large.toBytes()));
 ```
 
 It will print the following output:
 
-    The default format of a random two byte tag is: QHP0
-    The base 2 format of the same two byte tag is: 1011110000101100
-    The default format of a random eight byte tag is: JDPFKG8AN4PS8
-    The base 16 format of the same eight byte tag is: 8B6CE93D0AA92D94
+    The default format of a random 2 byte tag is: QHP0
+    The default format of a random 8 byte tag is: JDPFKG8AN4PS8
     The default format of a random 20 byte tag is: PJMMDBFZJCHPVFYYYY2MJ8C2J76W3S1Y
-    The base 64 format of the same 20 byte tag is: tGlGrd+LIW273veFSKGCic3B5D4=
 

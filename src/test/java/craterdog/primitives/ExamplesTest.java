@@ -121,13 +121,10 @@ public class ExamplesTest {
         Tag medium = new Tag(8);
         Tag large = new Tag();  // defaults to 20 bytes
 
-        // Display the tags using different numeric bases
-        log.info("The default format of a random two byte tag is: {}", small);
-        log.info("The base 2 format of the same two byte tag is: {}", Base02Utils.encode(small.toBytes()));
-        log.info("The default format of a random eight byte tag is: {}", medium);
-        log.info("The base 16 format of the same eight byte tag is: {}", Base16Utils.encode(medium.toBytes()));
+        // Display the tags
+        log.info("The default format of a random 2 byte tag is: {}", small);
+        log.info("The default format of a random 8 byte tag is: {}", medium);
         log.info("The default format of a random 20 byte tag is: {}", large);
-        log.info("The base 64 format of the same 20 byte tag is: {}", Base64Utils.encode(large.toBytes()));
 
         log.info("Completed testTagExamples().\n");
     }
