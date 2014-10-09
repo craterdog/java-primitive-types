@@ -91,7 +91,7 @@ Each tag is formatted as a base 32 ('0'..'9', 'A'..'D', 'F'..'H', 'J'..'N', 'P'.
 string representation of the random bytes that make up the tag. The bigger the tag the less
 likely there will be a collision. The following table captures the uniqueness:
 
-Scope      | # Things  | # Bytes | # Bits | # Characters | Size of Space
+Scope      | # Things  | # Bytes | # Bits | # Characters | # Tags
 ---------- | --------- | ------- | ------ | ------------ | -------------
 Desk       | 16        | 1       | 8      | 2            | 256
 Room       | 256       | 2       | 16     | 4            | 65536
