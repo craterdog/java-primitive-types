@@ -91,17 +91,18 @@ Each tag is formatted as a base 32 ('0'..'9', 'A'..'D', 'F'..'H', 'J'..'N', 'P'.
 string representation of the random bytes that make up the tag. The bigger the tag the less
 likely there will be a collision. The following table captures the uniqueness:
 
-Scope    | # Things  | # Bytes | # Bits | # Characters | Size of Space
--------- | --------- | ------- | ------ | ------------ | -------------
-Desk     | 16        | 1       | 8      | 2            | 256
-Room     | 256       | 2       | 16     | 4            | 65536
-Building | 65536     | 4       | 32     | 7            | 4.29E+009
-City     | 4.29E+009 | 8       | 64     | 13           | 1.84E+019
-Globe    | 1.84E+019 | 16      | 128    | 26           | 3.40E+038
-Galaxy   | 3.40E+038 | 32      | 256    | 52           | 1.16E+077
-Universe | 1.16E+077 | 64      | 512    | 103          | 1.34E+154
+Scope      | # Things  | # Bytes | # Bits | # Characters | Size of Space
+---------- | --------- | ------- | ------ | ------------ | -------------
+Desk       | 16        | 1       | 8      | 2            | 256
+Room       | 256       | 2       | 16     | 4            | 65536
+Building   | 65536     | 4       | 32     | 7            | 4.29E+009
+City       | 4.29E+009 | 8       | 64     | 13           | 1.84E+019
+Globe      | 1.84E+019 | 16      | 128    | 26           | 3.40E+038
+Galaxy     | 3.40E+038 | 32      | 256    | 52           | 1.16E+077
+Universe   | 1.16E+077 | 64      | 512    | 103          | 1.34E+154
+Multiverse | 1.34E+154 | 128     | 1024   | 205          | 1.80E+308
 
-Use this table to chose the size of the tag that fits the scope of your name space.
+Use this table to chose the size of the tag that fits the scope of your *thing* space.
 
 ##Example Code
 The following example code demonstrates some of the ways the `Angle` primitive class can be used:
@@ -190,15 +191,17 @@ It will print the following output:
 And finally, this code example demonstrates the ways that different size tags can be formatted:
 
 ```java
-   // Create some tags
+    // Create some tags
     Tag small = new Tag(2);
     Tag medium = new Tag(8);
     Tag large = new Tag();  // defaults to 20 bytes
+    Tag huge = new Tag(128);
 
     // Display the tags
-    log.info("The default format of a random two byte tag is: {}", small);
-    log.info("The default format of a random eight byte tag is: {}", medium);
+    log.info("The default format of a random 2 byte tag is: {}", small);
+    log.info("The default format of a random 8 byte tag is: {}", medium);
     log.info("The default format of a random 20 byte tag is: {}", large);
+    log.info("The default format of a random 128 byte tag is: {}", huge);
 ```
 
 It will print the following output:
@@ -206,4 +209,8 @@ It will print the following output:
     The default format of a random 2 byte tag is: QHP0
     The default format of a random 8 byte tag is: JDPFKG8AN4PS8
     The default format of a random 20 byte tag is: PJMMDBFZJCHPVFYYYY2MJ8C2J76W3S1Y
+    The default format of a random 128 byte tag is: 
+    R2LXSXRCVG9FL87MGBYA7TMH6RBTTC95M58SPBLYQZ01QN99GTVW989NMH4QZH9RW4CDHNP81CSFTLFY
+    VZWM5FRHC5J9WD6Q1H3JHQ9XXL00RVW95731MMK7Z601QXDNS43B0A5G3ALLY6SKMKD0XZAVRKGW10T4
+    C00FZNLZMPFBXNACMH5QXTGQ16LLNYX98QGXG5VDF41ZM
 
