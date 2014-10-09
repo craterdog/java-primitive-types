@@ -51,7 +51,9 @@ probabilities. The following functions are supported:
 ##Tag Primitive Type
 
 The `Tag` class provides a way to encapsulate an arbitrary number of random bytes in
-a way that makes it easy to view them.  The following shows some examples of tags:
+a way that can be used as a unique identifier within a certain size space of "things".
+The tags are formatted in a way that makes them easy to view.  The following shows
+some examples of tags:
 
     Tag size 0 bytes:
     Tag size 1 bytes: 2R
@@ -88,10 +90,12 @@ a way that makes it easy to view them.  The following shows some examples of tag
     Tag size 32 bytes: AS5RH03BP0ACP5H980J3MQZNPAK6D3L4P4Z2GH20R052HB8NC160
 
 Each tag is formatted as a base 32 ('0'..'9', 'A'..'D', 'F'..'H', 'J'..'N', 'P'..'T', 'V'..'Z')
-string representation of the random bytes that make up the tag. The bigger the tag the less
-likely there will be a collision. The following table captures the uniqueness:
+string representation of the random bytes that define the tag. The bigger the tag the less
+likely there will be a collision and the more likely that it will be unique. The following
+table captures a range of scope sizes and the number of things within each scope that
+can relatively safely be identified with tags without risk of repeated tag values:
 
-Scope      | # Things  | # Bytes | # Bits | # Characters | # Tags
+Scope      | # Things  | # Bytes | # Bits | # Characters | Total # Tags
 ---------- | --------- | ------- | ------ | ------------ | -------------
 Desk       | 16        | 1       | 8      | 2            | 256
 Room       | 256       | 2       | 16     | 4            | 65536
