@@ -14,7 +14,7 @@ To get started using these classes, include the following dependency in your mav
     <dependency>
         <groupId>com.craterdog</groupId>
         <artifactId>java-primitive-types</artifactId>
-        <version>3.0</version>
+        <version>3.1</version>
     </dependency>
 ```
 
