@@ -9,7 +9,6 @@
  ************************************************************************/
 package craterdog.primitives;
 
-import java.math.BigInteger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
