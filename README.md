@@ -1,13 +1,29 @@
-#Java Primitive Types
+# Java Primitive Types
 
+## The Gist of It
 This project contains a set of Java primitive type classes. Each class follows the same immutability
 conventions that the native Java primitive types support. They also provide a default implementation
-of the canonical `Object` class methods. The following primitive types are included in this project:
+of the canonical `Object` class methods.
 
- * *Angle* - representing the mathematical concept of an angle in radians
+## Highlighted Components
+The following highlights the new primitive types that this project provides:
+
+ * *Angle* - representing the mathematical concept of an angle in radians in the range (-pi..pi]
+ * *Binary* - an extension of `byte[]` that adds support for the `craterdog.core.Sequential` and
+`craterdog.core.Composite` interfaces
  * *Probability* - representing a mathematical probability in the range [0.0..1.0)
  * *Tag* - a unique identifier of any length displayed in base 32 format
+ * *Text* - an extension of the `java.lang.String` class that adds support for the `craterdog.core.Sequential`
+interface
 
+## Quick Links
+For more detail on this project click on the following links:
+
+ * [javadocs](http://craterdog.github.io/java-primitive-types/3.1/index.html)
+ * [wiki](https://github.com/craterdog/java-primitive-types/wiki/Crater-Dog-Technologies%E2%84%A2-Java-Primitive-Types)
+ * [website](http://craterdog.com)
+
+## Getting Started
 To get started using these classes, include the following dependency in your maven pom.xml file:
 
 ```xml
@@ -18,8 +34,11 @@ To get started using these classes, include the following dependency in your mav
     </dependency>
 ```
 
-##Angle Primitive Type
+The source code, javadocs and jar file artifacts for this project are available from the
+*Maven Central Repository*. If your project doesn't currently use maven and you would like to,
+click [here](https://github.com/craterdog/maven-parent-poms) to get started down that path quickly.
 
+## Angle Primitive Type
 The `Angle` class provides some static methods that implement functions involving
 angles. The following functions are supported:
 
@@ -36,8 +55,7 @@ angles. The following functions are supported:
  * tangent
  * arctangent
 
-##Probability Primitive Type
-
+## Probability Primitive Type
 The `Probability` class provides some static methods that implement functions involving
 probabilities. The following functions are supported:
 
@@ -48,8 +66,7 @@ probabilities. The following functions are supported:
  * or
  * xor
 
-##Tag Primitive Type
-
+## Tag Primitive Type
 The `Tag` class provides a way to encapsulate an arbitrary number of random bytes in
 a way that can be used as a unique identifier within a certain size space of "things".
 The tags are formatted in a way that makes them easy to view.  The following shows
@@ -108,7 +125,7 @@ Multiverse | 1.34E+154 | 128     | 1024   | 205          | 1.80E+308
 
 Use this table to chose the size of the tag that fits the scope of your *thing* space.
 
-##Example Code
+## Example Code
 The following example code demonstrates some of the ways the `Angle` primitive class can be used:
 
 ```java
