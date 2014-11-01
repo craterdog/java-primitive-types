@@ -1,6 +1,6 @@
 # Java Primitive Types
 
-## The Gist
+## In a Nut Shell
 This project contains a set of Java primitive type classes. Each class follows the same immutability
 conventions that the native Java primitive types support. They also provide a default implementation
 of the canonical `Object` class methods.
@@ -20,7 +20,7 @@ interface
 For more detail on this project click on the following links:
 
  * [javadocs](http://craterdog.github.io/java-primitive-types/3.1/index.html)
- * [wiki](https://github.com/craterdog/java-primitive-types/wiki/Crater-Dog-Technologies%E2%84%A2-Java-Primitive-Types)
+ * [wiki](https://github.com/craterdog/java-primitive-types/wiki)
  * [website](http://craterdog.com)
 
 ## Getting Started
