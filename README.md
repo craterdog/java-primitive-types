@@ -21,6 +21,7 @@ For more detail on this project click on the following links:
 
  * [javadocs](http://craterdog.github.io/java-primitive-types/3.1/index.html)
  * [wiki](https://github.com/craterdog/java-primitive-types/wiki)
+ * [release notes](https://github.com/craterdog/java-primitive-types/wiki/Release-Notes)
  * [website](http://craterdog.com)
 
 ## Getting Started
