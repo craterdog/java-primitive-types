@@ -49,7 +49,8 @@
     </developers>
 
     <properties>
-        <java-general-utilities-version>3.3</java-general-utilities-version>
+        <java-general-utilities-version>3.4</java-general-utilities-version>
+        <java-core-interfaces-version>3.1</java-core-interfaces-version>
     </properties>
 
     <dependencies>
@@ -58,7 +59,29 @@
             <artifactId>java-general-utilities</artifactId>
             <version>${java-general-utilities-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.craterdog</groupId>
+            <artifactId>java-core-interfaces</artifactId>
+            <version>${java-core-interfaces-version}</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin-version}</version>
+                <configuration>
+                    <detectJavaApiLink>true</detectJavaApiLink>
+                    <links>
+                        <link>http://craterdog.github.io/java-general-utilities/${general-utilities-version}/package-list</link>
+                        <link>http://craterdog.github.io/java-core-interfaces/${core-interfaces-version}/package-list</link>
+                    </links>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <scm>
         <connection>scm:git:git@github.com:craterdog/java-primitive-types.git</connection>
