@@ -147,10 +147,6 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
             this.index = 0;
         }
 
-        private TextIterator(int index) {
-            this.index = index;
-        }
-
         @Override
         public boolean hasNext() {
             return index < length();
