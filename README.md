@@ -1,11 +1,11 @@
 ![Java Primitive Types](https://github.com/craterdog/java-primitive-types/blob/master/docs/images/CavePainting.jpg)
 
-## Java Primitive Types
+### Java Primitive Types
 This project contains a set of additional Java primitive type classes. Each class follows the same immutability
 conventions that the native Java primitive types support. They also provide a default implementation
 of the canonical `Object` class methods.
 
-## Highlighted Components
+### Highlighted Components
 The following highlights the new primitive types that this project provides:
 
  * *Angle* - representing the mathematical concept of an angle in radians in the range (-pi..pi]
@@ -16,7 +16,7 @@ The following highlights the new primitive types that this project provides:
  * *TextString* - an extension of the `java.lang.String` class that adds support for the `craterdog.core.Sequential`
 interface
 
-## Quick Links
+### Quick Links
 For more detail on this project click on the following links:
 
  * [javadocs](http://craterdog.github.io/java-primitive-types/latest/index.html)
@@ -24,7 +24,7 @@ For more detail on this project click on the following links:
  * [release notes](https://github.com/craterdog/java-primitive-types/wiki/Releases)
  * [website](http://craterdog.com)
 
-## Getting Started
+### Getting Started
 To get started using these classes, include the following dependency in your maven pom.xml file:
 
 ```xml
@@ -39,7 +39,7 @@ The source code, javadocs and jar file artifacts for this project are available 
 *Maven Central Repository*. If your project doesn't currently use maven and you would like to,
 click [here](https://github.com/craterdog/maven-parent-poms) to get started down that path quickly.
 
-## Recognition
+### Recognition
 *Crater Dog Technologies™* would like to recognize and thank the following
 companies for their contributions to the development and testing of various
 components within this project:
