@@ -23,9 +23,10 @@ import java.util.NoSuchElementException;
 
 
 /**
- * This class implements a mathematical probability as a primitive type.  The allowed values
- * are double precision floating point numbers in the range [0.0..1.0].  Instances of this
- * class are immutable.
+ * This class implements a binary string in a way that makes it easy to encode and decode it
+ * in various numeric bases (2, 16, 32, 64). The class also supports the
+ * <code>java.lang.Iterable</code> interface so that it can be used by the java language
+ * for each loops. Binary strings are immutable.
  *
  * @author Derk Norton
  */
@@ -34,16 +35,29 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     private final byte[] bytes;
 
 
+    /**
+     * This default constructor creates an empty binary string.
+     */
     public BinaryString() {
         this.bytes = new byte[0];
     }
 
 
+    /**
+     * This constructor creates a binary string containing the specified bytes.
+     *
+     * @param bytes The bytes to be used to seed the binary string.
+     */
     public BinaryString(byte[] bytes) {
         this.bytes = Arrays.copyOf(bytes, bytes.length);
     }
 
 
+    /**
+     * This constructor creates a binary string containing the specified bytes.
+     *
+     * @param bytes The bytes to be used to seed the binary string.
+     */
     public BinaryString(Byte[] bytes) {
         int size = bytes.length;
         this.bytes = new byte[size];
@@ -53,6 +67,13 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     }
 
 
+    /**
+     * This constructor decodes the specified string using the specified base to extract the
+     * corresponding binary string.
+     *
+     * @param string The encoded string containing the bytes to be used to seed the binary string.
+     * @param base The numeric base (2, 16, 32, or 64) that was used to encode the string.
+     */
     public BinaryString(String string, int base) {
         switch (base) {
             case 2:
@@ -73,6 +94,11 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     }
 
 
+    /**
+     * This constructor creates a binary string containing the specified bit set.
+     *
+     * @param bits The bit set to be used to seed the binary string.
+     */
     public BinaryString(BitSet bits) {
         this.bytes = bits.toByteArray();
     }
@@ -90,41 +116,101 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     }
 
 
+    /**
+     * This method converts the binary string into a base 2 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.
+     *
+     * @return The base 2 encoded string for the binary string.
+     */
     public String toBase02String() {
         return Base02Utils.encode(bytes);
     }
 
 
+    /**
+     * This method converts the binary string into a base 2 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.  The specified indentation string is used to prefix each line.
+     *
+     * @param indentation The (whitespace only) string that should be used to prefix each line.
+     * @return The base 2 encoded string for the binary string.
+     */
     public String toBase02String(String indentation) {
         return Base02Utils.encode(bytes, indentation);
     }
 
 
+    /**
+     * This method converts the binary string into a base 16 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.
+     *
+     * @return The base 16 encoded string for the binary string.
+     */
     public String toBase16String() {
         return Base16Utils.encode(bytes);
     }
 
 
+    /**
+     * This method converts the binary string into a base 16 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.  The specified indentation string is used to prefix each line.
+     *
+     * @param indentation The (whitespace only) string that should be used to prefix each line.
+     * @return The base 16 encoded string for the binary string.
+     */
     public String toBase16String(String indentation) {
         return Base16Utils.encode(bytes, indentation);
     }
 
 
+    /**
+     * This method converts the binary string into a base 32 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.
+     *
+     * @return The base 32 encoded string for the binary string.
+     */
     public String toBase32String() {
         return Base32Utils.encode(bytes);
     }
 
 
+    /**
+     * This method converts the binary string into a base 32 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.  The specified indentation string is used to prefix each line.
+     *
+     * @param indentation The (whitespace only) string that should be used to prefix each line.
+     * @return The base 32 encoded string for the binary string.
+     */
     public String toBase32String(String indentation) {
         return Base32Utils.encode(bytes, indentation);
     }
 
 
+    /**
+     * This method converts the binary string into a base 64 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.
+     *
+     * @return The base 64 encoded string for the binary string.
+     */
     public String toBase64String() {
         return Base64Utils.encode(bytes);
     }
 
 
+    /**
+     * This method converts the binary string into a base 64 encoded string. If the encoded string
+     * is longer than 80 characters, it is broken up into separate lines with a maximum of
+     * 80 characters per line.  The specified indentation string is used to prefix each line.
+     *
+     * @param indentation The (whitespace only) string that should be used to prefix each line.
+     * @return The base 64 encoded string for the binary string.
+     */
     public String toBase64String(String indentation) {
         return Base64Utils.encode(bytes, indentation);
     }
@@ -181,6 +267,11 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     }
 
 
+    /**
+     * This method returns a byte array containing the binary string.
+     *
+     * @return A byte array containing the binary string.
+     */
     public byte[] getBytes() {
         return Arrays.copyOf(bytes, bytes.length);
     }

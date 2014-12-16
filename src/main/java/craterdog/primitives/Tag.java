@@ -15,8 +15,9 @@ import craterdog.utils.RandomUtils;
 
 
 /**
- * This class provides a globally unique identifier that can be used to reference anything without requiring
- * a centralized generator.  The tag is "self hashing" making it very efficient as a key.
+ * This class provides a globally unique identifier that can be used to reference anything
+ * without requiring a centralized generator.  The tag is "self hashing" making it very
+ * efficient as a key.
  *
  * @author Derk Norton
  */

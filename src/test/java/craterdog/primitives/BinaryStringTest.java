@@ -46,6 +46,10 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the constructors that decode strings and compare them to the output of the
+     * corresponding toString method.
+     */
     @Test
     public void testConstructorsAndToString() {
         logger.info("Beginning testConstructorsAndToString()...");
@@ -71,6 +75,9 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the equals and compareTo methods.
+     */
     @Test
     public void testEqualsAndCompareTo() {
         logger.info("Beginning testEqualsAndCompareTo()...");
@@ -89,6 +96,9 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the hashCode method.
+     */
     @Test
     public void testHashCode() {
         logger.info("Beginning testHashCode()...");
@@ -98,6 +108,9 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the isEmpty, length and getNumberOfElements methods.
+     */
     @Test
     public void testIsEmptyAndLengthAndGetNumberOfElements() {
         logger.info("Beginning testIsEmptyAndLengthAndGetNumberOfElements()...");
@@ -112,6 +125,9 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the toArray method.
+     */
     @Test
     public void testToArray() {
         logger.info("Beginning testToArray()...");
@@ -123,6 +139,9 @@ public class BinaryStringTest {
     }
 
 
+    /**
+     * Test the iterator method.
+     */
     @Test
     public void testIterator() {
         logger.info("Beginning testIterator()...");

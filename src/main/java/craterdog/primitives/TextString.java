@@ -15,9 +15,9 @@ import java.util.NoSuchElementException;
 
 
 /**
- * This class implements a mathematical probability as a primitive type.  The allowed values
- * are double precision floating point numbers in the range [0.0..1.0].  Instances of this
- * class are immutable.
+ * This class implements a text string that behaves like a <code>java.lang.String</code> but
+ * that also supports the <code>java.lang.Iterable</code> interface allowing it to be used
+ * in a java language for each loop.  Text strings are immutable.
  *
  * @author Derk Norton
  */
@@ -26,26 +26,45 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
     private final String value;
 
 
+    /**
+     * This default constructor creates an empty text string.
+     */
     public TextString() {
         this.value = "";
     }
 
 
+    /**
+     * This constructor creates a text string using the specified string value.
+     * @param value The value to be used to seed the new text string.
+     */
     public TextString(String value) {
         this.value = value;
     }
 
 
+    /**
+     * This constructor creates a text string using the specified character sequence.
+     * @param value The character sequence be used to seed the new text string.
+     */
     public TextString(CharSequence value) {
         this.value = value.toString();
     }
 
 
+    /**
+     * This constructor creates a text string using the specified character array.
+     * @param value The character array be used to seed the new text string.
+     */
     public TextString(char[] value) {
         this.value = String.copyValueOf(value);
     }
 
 
+    /**
+     * This constructor creates a text string using the specified character array.
+     * @param value The character array be used to seed the new text string.
+     */
     public TextString(Character[] value) {
         int size = value.length;
         char[] array = new char[size];

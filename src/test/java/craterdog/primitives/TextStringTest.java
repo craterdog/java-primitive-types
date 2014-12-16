@@ -45,6 +45,10 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the constructor that takes a string and compare it to the result of the toString
+     * method.
+     */
     @Test
     public void testConstructorAndToString() {
         logger.info("Beginning testConstructorAndToString()...");
@@ -55,6 +59,9 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the equals and compareTo methods.
+     */
     @Test
     public void testEqualsAndCompareTo() {
         logger.info("Beginning testEqualsAndCompareTo()...");
@@ -73,6 +80,9 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the hashCode method.
+     */
     @Test
     public void testHashCode() {
         logger.info("Beginning testHashCode()...");
@@ -83,6 +93,9 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the isEmpty, length and getNumberOfElements methods.
+     */
     @Test
     public void testIsEmptyAndLengthAndGetNumberOfElements() {
         logger.info("Beginning testIsEmptyAndLengthAndGetNumberOfElements()...");
@@ -91,6 +104,7 @@ public class TextStringTest {
         assertTrue("The isEmpty methods are not consistent.", text.isEmpty());
         assertEquals("The length methods are not consistent.", string.length(), text.length());
         assertEquals("The getNumberOfElements methods are not consistent.", string.length(), text.getNumberOfElements());
+
         string = "This a text string...";
         text = new TextString(string);
         assertFalse("The isEmpty methods are not consistent.", text.isEmpty());
@@ -100,12 +114,16 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the charAt and subSequence methods.
+     */
     @Test
     public void testCharAtAndSubSequence() {
         logger.info("Beginning testCharAtAndSubSequence()...");
         String string = "This a text string...";
         TextString text = new TextString(string);
         assertEquals("The charAt methods are not consistent.", string.charAt(2), text.charAt(2));
+
         string = "This a text string...";
         text = new TextString(string);
         assertEquals("The subSequence methods are not consistent.", string.subSequence(5, 8).toString(), text.subSequence(5, 8).toString());
@@ -113,6 +131,9 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the toArray method.
+     */
     @Test
     public void testToArray() {
         logger.info("Beginning testToArray()...");
@@ -125,6 +146,9 @@ public class TextStringTest {
     }
 
 
+    /**
+     * Test the iterator method.
+     */
     @Test
     public void testIterator() {
         logger.info("Beginning testIterator()...");
