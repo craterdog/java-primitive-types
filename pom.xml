@@ -75,8 +75,8 @@
                 <configuration>
                     <detectJavaApiLink>true</detectJavaApiLink>
                     <links>
-                        <link>http://craterdog.github.io/java-general-utilities/${general-utilities-version}/package-list</link>
-                        <link>http://craterdog.github.io/java-core-interfaces/${core-interfaces-version}/package-list</link>
+                        <link>http://craterdog.github.io/java-general-utilities/${java-general-utilities-version}/package-list</link>
+                        <link>http://craterdog.github.io/java-core-interfaces/${java-core-interfaces-version}/package-list</link>
                     </links>
                 </configuration>
             </plugin>
