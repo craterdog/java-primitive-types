@@ -76,12 +76,6 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
 
 
     @Override
-    public String toString() {
-        return value;
-    }
-
-
-    @Override
     public int compareTo(TextString that) {
         if (that == null) return 1;
         if (this == that) return 0;  // same object
@@ -101,6 +95,12 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
     @Override
     public int hashCode() {
         return value.hashCode();
+    }
+
+
+    @Override
+    public String toString() {
+        return value;
     }
 
 

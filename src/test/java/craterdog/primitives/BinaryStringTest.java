@@ -55,13 +55,13 @@ public class BinaryStringTest {
         logger.info("Beginning testConstructorsAndToString()...");
         String base02String = "0110100100010101";
         BinaryString text = new BinaryString(base02String, 2);
-        assertEquals("The constructor and equals methods are incompatible.", base02String, text.toBase02String());
+        assertEquals("The constructor and equals methods are incompatible.", base02String, text.toString(2));
         String base16String = "39E1BB74";
         text = new BinaryString(base16String, 16);
-        assertEquals("The constructor and equals methods are incompatible.", base16String, text.toBase16String());
+        assertEquals("The constructor and equals methods are incompatible.", base16String, text.toString(16));
         String base32String = "7ZQ8G6ZJZDV8T";
         text = new BinaryString(base32String, 32);
-        assertEquals("The constructor and equals methods are incompatible.", base32String, text.toBase32String());
+        assertEquals("The constructor and equals methods are incompatible.", base32String, text.toString(32));
         String base64String = "\n" +
                 "    aR0vNePXNOssIpkx8mTUZSN3dPF88VKzRzjUtXeMqkoCtVSgJjTOHpxbyfMMROAEBrTviql0hREkYUau\n" +
                 "    YPcTCq+YM9Z1aW7LlyQIqeb8Wk/RO1MrBeZNotcOabU2Ok2JKa8O4sqL3Xi091380gx6GeZHFVsBZK/R\n" +
@@ -70,7 +70,7 @@ public class BinaryStringTest {
                 "    yN9J9mGnr9+PgPg0mR/KxZbnbdfGZE4tJ6eqeTB5Vmui4y4xTddkdclT0zvK6jLH0AH9+yeRSM6P7fgw\n" +
                 "    9ov4w2t6y6bL8j10N2IUucNGkrZv0UI0FwQOhcgu5SpY42p8KPBb28z7qjYLfIGs6egtbJwGigUNNMJZ";
         text = new BinaryString(base64String, 64);
-        assertEquals("The constructor and equals methods are incompatible.", base64String, text.toBase64String("    "));
+        assertEquals("The constructor and equals methods are incompatible.", base64String, text.toString("    "));
         logger.info("Completed testConstructorsAndToString().");
     }
 
@@ -103,7 +103,7 @@ public class BinaryStringTest {
     public void testHashCode() {
         logger.info("Beginning testHashCode()...");
         BinaryString text = new BinaryString("7ZQ8G6ZJZDV8T", 32);
-        assertEquals("The hashCode methods are not consistent.", Arrays.hashCode(text.getBytes()), text.hashCode());
+        assertEquals("The hashCode methods are not consistent.", Arrays.hashCode(text.toBytes()), text.hashCode());
         logger.info("Completed testHashCode().");
     }
 
@@ -116,11 +116,11 @@ public class BinaryStringTest {
         logger.info("Beginning testIsEmptyAndLengthAndGetNumberOfElements()...");
         BinaryString text = new BinaryString("", 2);
         assertTrue("The isEmpty methods are not consistent.", text.isEmpty());
-        assertEquals("The getNumberOfElements methods are not consistent.", text.getBytes().length, text.getNumberOfElements());
+        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getNumberOfElements());
 
         text = new BinaryString("7ZQ8G6ZJZDV8T", 32);
         assertFalse("The isEmpty methods are not consistent.", text.isEmpty());
-        assertEquals("The getNumberOfElements methods are not consistent.", text.getBytes().length, text.getNumberOfElements());
+        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getNumberOfElements());
         logger.info("Completed testIsEmptyAndLengthAndGetNumberOfElements().");
     }
 
@@ -150,7 +150,7 @@ public class BinaryStringTest {
         for (Byte b : text) {
             count++;
         }
-        assertEquals("The iterator is not consistent.", text.getBytes().length, count);
+        assertEquals("The iterator is not consistent.", text.toBytes().length, count);
         logger.info("Completed testIterator().");
     }
 
