@@ -59,7 +59,7 @@ public final class Angle implements Comparable<Angle> {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Angle)) return false;
+        if (obj == null || !(obj instanceof Angle)) return false;
         Angle that = (Angle) obj;
         return value - that.value < Angle.EPSILON;
     }
@@ -172,13 +172,13 @@ public final class Angle implements Comparable<Angle> {
 
 
     /**
-     * This function returns the angle whose sine is the specified value.
+     * This function returns the angle whose sine is the specified ratio.
      *
-     * @param value The value.
-     * @return The arcsine of the value.
+     * @param ratio The ratio of the opposite over the hypotenuse.
+     * @return The arcsine of the ratio.
      */
-    static public Angle arcsine(double value) {
-        return new Angle(Math.asin(value));
+    static public Angle arcsine(double ratio) {
+        return new Angle(Math.asin(ratio));
     }
 
 
@@ -195,13 +195,13 @@ public final class Angle implements Comparable<Angle> {
 
 
     /**
-     * This function returns the angle whose cosine is the specified value.
+     * This function returns the angle whose cosine is the specified ratio.
      *
-     * @param value The value.
-     * @return The arccosine of the value.
+     * @param ratio The ratio of the adjacent over the hypotenuse.
+     * @return The arccosine of the ratio.
      */
-    static public Angle arccosine(double value) {
-        return new Angle(Math.acos(value));
+    static public Angle arccosine(double ratio) {
+        return new Angle(Math.acos(ratio));
     }
 
 
@@ -218,18 +218,18 @@ public final class Angle implements Comparable<Angle> {
 
 
     /**
-     * This function returns the angle whose tangent is the specified value.
+     * This function returns the angle whose tangent is the specified ratio.
      *
-     * @param value The value.
-     * @return The arctangent of the value.
+     * @param ratio The ratio of the opposite over the adjacent.
+     * @return The arctangent of the ratio.
      */
-    static public Angle arctangent(double value) {
-        return new Angle(Math.atan(value));
+    static public Angle arctangent(double ratio) {
+        return new Angle(Math.atan(ratio));
     }
 
 
     /**
-     * This function returns the angle whose tangent is the ration of the specified values.
+     * This function returns the angle whose tangent is the ratio of the specified values.
      *
      * @param y The y coordinate.
      * @param x The x coordinate.

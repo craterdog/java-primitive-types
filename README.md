@@ -11,7 +11,7 @@ The following highlights the new primitive types that this project provides:
  * *Angle* - representing the mathematical concept of an angle in radians in the range (-pi..pi]
  * *BinaryString* - an extension of `byte[]` that adds support for the `craterdog.core.Sequential` and
 `craterdog.core.Composite` interfaces
- * *Probability* - representing a mathematical probability in the range [0.0..1.0)
+ * *Probability* - representing a mathematical probability in the range [0.0..1.0]
  * *Tag* - a unique identifier of any length displayed in base 32 format
  * *TextString* - an extension of the `java.lang.String` class that adds support for the `craterdog.core.Sequential`
 interface
@@ -36,13 +36,13 @@ To get started using these classes, include the following dependency in your mav
 ```
 
 The source code, javadocs and jar file artifacts for this project are available from the
-*Maven Central Repository*. If your project doesn't currently use maven and you would like to,
+_Maven Central Repository_. If your project doesn't currently use maven and you would like to,
 click [here](https://github.com/craterdog/maven-parent-poms) to get started down that path quickly.
 
 ### Recognition
-*Crater Dog Technologies™* would like to recognize and thank the following
+_Crater Dog Technologies™_ would like to recognize and thank the following
 companies for their contributions to the development and testing of various
 components within this project:
 
- * *Blackhawk Network* (http://blackhawknetwork.com)
+ * _Blackhawk Network_ (http://blackhawknetwork.com)
 
