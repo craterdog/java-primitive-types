@@ -58,19 +58,19 @@ public class ExamplesTest {
         Angle piOver6 = Angle.product(piOver3, 0.5d);
 
         // Do some angle calculations
-        logger.info("The value of pi is: {}", pi);
-        logger.info("The value of pi/2 is: {}", piOver2);
-        logger.info("The value of pi/3 is: {}", piOver3);
-        logger.info("The value of pi/4 is: {}", piOver4);
-        logger.info("The value of pi/6 is: {}", piOver6);
-        logger.info("The negative of pi/6 is: {}", Angle.negate(piOver6));
-        logger.info("The inversion of pi/3 is: {}", Angle.invert(piOver3));
-        logger.info("The sum of pi/6 and pi/3 is: {}", Angle.sum(piOver6, piOver3));
-        logger.info("The difference of pi/3 and pi/2 is: {}", Angle.difference(piOver3, piOver2));
-        logger.info("The sine of pi/6 is: {}", Angle.sine(piOver6));
-        logger.info("The cosine of pi/3 is: {}", Angle.cosine(piOver3));
-        logger.info("The tangent of pi/2 is: {}", Angle.tangent(piOver2));
-        logger.info("The arctangent of 1.0 is: {}", Angle.arctangent(1.0));
+        logger.info("  The value of pi is: {}", pi);
+        logger.info("  The value of pi/2 is: {}", piOver2);
+        logger.info("  The value of pi/3 is: {}", piOver3);
+        logger.info("  The value of pi/4 is: {}", piOver4);
+        logger.info("  The value of pi/6 is: {}", piOver6);
+        logger.info("  The negative of pi/6 is: {}", Angle.negate(piOver6));
+        logger.info("  The inversion of pi/3 is: {}", Angle.invert(piOver3));
+        logger.info("  The sum of pi/6 and pi/3 is: {}", Angle.sum(piOver6, piOver3));
+        logger.info("  The difference of pi/3 and pi/2 is: {}", Angle.difference(piOver3, piOver2));
+        logger.info("  The sine of pi/6 is: {}", Angle.sine(piOver6));
+        logger.info("  The cosine of pi/3 is: {}", Angle.cosine(piOver3));
+        logger.info("  The tangent of pi/2 is: {}", Angle.tangent(piOver2));
+        logger.info("  The arctangent of 1.0 is: {}", Angle.arctangent(1.0));
 
         logger.info("Completed testAngleExamples().\n");
     }
@@ -91,18 +91,18 @@ public class ExamplesTest {
         Probability never = new Probability(0.0d);
 
         // Do some angle calculations
-        logger.info("The value of always is: {}", always);
-        logger.info("The value of threeQuarters is: {}", threeQuarters);
-        logger.info("The value of oneHalf is: {}", oneHalf);
-        logger.info("The value of oneThird is: {}", oneThird);
-        logger.info("The value of oneQuarter is: {}", oneQuarter);
-        logger.info("The value of never is: {}", never);
-        logger.info("The inversion of never is: {}", Probability.not(never));
-        logger.info("The intersection of threeQuarters and oneThird is: {}", Probability.and(threeQuarters, oneThird));
-        logger.info("The union of oneHalf and oneHalf is: {}", Probability.or(oneHalf, oneHalf));
-        logger.info("The difference (sans) of oneHalf and oneHalf is: {}", Probability.sans(oneHalf, oneHalf));
-        logger.info("The exclusive union (xor) of oneHalf and oneHalf is: {}", Probability.xor(oneHalf, oneHalf));
-        logger.info("The results of a random coin toss are: {}", Probability.coinToss(oneHalf));
+        logger.info("  The value of always is: {}", always);
+        logger.info("  The value of threeQuarters is: {}", threeQuarters);
+        logger.info("  The value of oneHalf is: {}", oneHalf);
+        logger.info("  The value of oneThird is: {}", oneThird);
+        logger.info("  The value of oneQuarter is: {}", oneQuarter);
+        logger.info("  The value of never is: {}", never);
+        logger.info("  The inversion of never is: {}", Probability.not(never));
+        logger.info("  The intersection of threeQuarters and oneThird is: {}", Probability.and(threeQuarters, oneThird));
+        logger.info("  The union of oneHalf and oneHalf is: {}", Probability.or(oneHalf, oneHalf));
+        logger.info("  The difference (sans) of oneHalf and oneHalf is: {}", Probability.sans(oneHalf, oneHalf));
+        logger.info("  The exclusive union (xor) of oneHalf and oneHalf is: {}", Probability.xor(oneHalf, oneHalf));
+        logger.info("  The results of a random coin toss are: {}", Probability.coinToss(oneHalf));
 
         logger.info("Completed testProbabilityExamples().\n");
     }
@@ -121,10 +121,10 @@ public class ExamplesTest {
         Tag huge = new Tag(128);
 
         // Display the tags
-        logger.info("Here is a random 2 byte tag is: {}", small);
-        logger.info("Here is a random 8 byte tag is: {}", medium);
-        logger.info("Here is a random 20 byte tag is: {}", large);
-        logger.info("Here is a random 128 byte tag is: {}", huge);
+        logger.info("  Here is a random 2 byte tag is: {}", small);
+        logger.info("  Here is a random 8 byte tag is: {}", medium);
+        logger.info("  Here is a random 20 byte tag is: {}", large);
+        logger.info("  Here is a random 128 byte tag is: {}", huge);
 
         logger.info("Completed testTagExamples().\n");
     }
@@ -144,7 +144,7 @@ public class ExamplesTest {
 
         // Iterate through the characters
         for (Character c : shortText) {
-            logger.info("character: '{}'", c);
+            logger.info("  Character: '{}'", c);
         }
 
         logger.info("Completed testTextStringExamples().\n");
@@ -162,10 +162,10 @@ public class ExamplesTest {
         assert randomBinary.getNumberOfElements() == 100;
 
         // Format the bytes using various bases
-        logger.info("The binary string in base 2 is: {}\n", randomBinary.toString(2, "  "));
-        logger.info("The binary string in base 16 is: {}\n", randomBinary.toString(16, "  "));
-        logger.info("The binary string in base 32 is: {}\n", randomBinary.toString(32, "  "));
-        logger.info("The binary string in base 64 is: {}\n", randomBinary.toString(64, "  "));
+        logger.info("  The binary string in base 2 is: {}\n", randomBinary.toString(2, "  "));
+        logger.info("  The binary string in base 16 is: {}\n", randomBinary.toString(16, "  "));
+        logger.info("  The binary string in base 32 is: {}\n", randomBinary.toString(32, "  "));
+        logger.info("  The binary string in base 64 is: {}\n", randomBinary.toString(64, "  "));
 
         logger.info("Completed testBinaryStringExamples().\n");
     }

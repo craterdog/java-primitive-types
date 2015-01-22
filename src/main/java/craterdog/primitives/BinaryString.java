@@ -228,13 +228,6 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
 
 
     @Override
-    @Deprecated
-    public void toArray(Byte[] array) {
-        throw new UnsupportedOperationException("This operation has been deprecated.");
-    }
-
-
-    @Override
     public Iterator<Byte> iterator() {
         return new BinaryIterator();
     }

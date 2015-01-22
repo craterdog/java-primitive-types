@@ -53,17 +53,17 @@ public class ProbabilityTest {
         logger.info("Beginning testConstructorsAndLogicalOperations()...");
 
         Probability lowest = new Probability(0.0);
-        logger.info("Lowest: " + lowest.toDouble());
+        logger.info("  Lowest: " + lowest.toDouble());
         Probability quarter = new Probability(0.25);
-        logger.info("Quarter: " + quarter.toDouble());
+        logger.info("  Quarter: " + quarter.toDouble());
         Probability third = new Probability(1.0d/3.0d);
-        logger.info("Third: " + third.toDouble());
+        logger.info("  Third: " + third.toDouble());
         Probability middle = new Probability(0.5);
-        logger.info("Middle: " + middle.toDouble());
+        logger.info("  Middle: " + middle.toDouble());
         Probability threeQuarter = new Probability(0.75);
-        logger.info("Three Quarter: " + threeQuarter.toDouble());
+        logger.info("  Three Quarter: " + threeQuarter.toDouble());
         Probability highest = new Probability(1.0);
-        logger.info("Highest: " + highest.toDouble());
+        logger.info("  Highest: " + highest.toDouble());
         assertEquals(quarter, Probability.not(threeQuarter));
         assertEquals(quarter, Probability.and(threeQuarter, third));
         assertEquals(threeQuarter, Probability.or(middle, middle));

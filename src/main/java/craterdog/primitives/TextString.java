@@ -146,13 +146,6 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
 
 
     @Override
-    @Deprecated
-    public void toArray(Character[] array) {
-        throw new UnsupportedOperationException("This operation has been deprecated.");
-    }
-
-
-    @Override
     public Iterator<Character> iterator() {
         return new TextIterator();
     }
