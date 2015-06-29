@@ -48,6 +48,18 @@ public final class Probability implements Comparable<Probability> {
     }
 
 
+    /**
+     * This constructor creates a new instance of a probability with the specified value.
+     *
+     * @param string The string value of the new probability [0.0..1.0].
+     */
+    public Probability(String string) {
+        value = Double.parseDouble(string);
+        if (value < 0.0d || value > 1.0d)
+            throw new NumberFormatException("Attempted to set the value of a probability outside the range of 0.0 - 1.0: " + value);
+    }
+
+
     @Override
     public String toString() {
         return Double.toString(value);

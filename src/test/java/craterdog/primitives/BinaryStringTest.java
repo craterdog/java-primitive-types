@@ -71,6 +71,11 @@ public class BinaryStringTest {
                 "    9ov4w2t6y6bL8j10N2IUucNGkrZv0UI0FwQOhcgu5SpY42p8KPBb28z7qjYLfIGs6egtbJwGigUNNMJZ";
         text = new BinaryString(base64String, 64);
         assertEquals("The constructor and equals methods are incompatible.", base64String, text.toString("    "));
+
+        base64String = "UQ==";
+        text = new BinaryString(base64String);
+        assertEquals("The constructor and equals methods are incompatible.", base64String, text.toString());
+
         logger.info("Completed testConstructorsAndToString().");
     }
 

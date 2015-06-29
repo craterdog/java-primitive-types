@@ -46,7 +46,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     /**
      * This constructor creates a binary string containing the specified bytes.
      *
-     * @param bytes The bytes to be used to seed the binary string.
+     * @param bytes The bytes to be used to create the binary string.
      */
     public BinaryString(byte[] bytes) {
         this.bytes = Arrays.copyOf(bytes, bytes.length);
@@ -56,7 +56,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     /**
      * This constructor creates a binary string containing the specified bytes.
      *
-     * @param bytes The bytes to be used to seed the binary string.
+     * @param bytes The bytes to be used to create the binary string.
      */
     public BinaryString(Byte[] bytes) {
         int size = bytes.length;
@@ -68,10 +68,21 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
 
 
     /**
+     * This constructor decodes the specified string using base 64 to extract the
+     * corresponding binary string.
+     *
+     * @param string The encoded string containing the bytes to be used to create the binary string.
+     */
+    public BinaryString(String string) {
+        this.bytes = Base64Utils.decode(string);
+    }
+
+
+    /**
      * This constructor decodes the specified string using the specified base to extract the
      * corresponding binary string.
      *
-     * @param string The encoded string containing the bytes to be used to seed the binary string.
+     * @param string The encoded string containing the bytes to be used to create the binary string.
      * @param base The numeric base (2, 16, 32, or 64) that was used to encode the string.
      */
     public BinaryString(String string, int base) {
@@ -97,7 +108,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     /**
      * This constructor creates a binary string containing the specified bit set.
      *
-     * @param bits The bit set to be used to seed the binary string.
+     * @param bits The bit set to be used to create the binary string.
      */
     public BinaryString(BitSet bits) {
         this.bytes = bits.toByteArray();

@@ -50,6 +50,17 @@ public final class Angle implements Comparable<Angle> {
     }
 
 
+    /**
+     * This constructor creates an angle with the specified value in radians.  If the value
+     * is outside the range (-pi..pi] then the value is normalize to be within this range.
+     *
+     * @param string The string value of the new angle.
+     */
+    public Angle(String string) {
+        this.value = normalize(Double.parseDouble(string));
+    }
+
+
     @Override
     public int compareTo(Angle angle) {
         if (angle == null) return 1;

@@ -54,11 +54,11 @@ public class ProbabilityTest {
 
         Probability lowest = new Probability(0.0);
         logger.info("  Lowest: " + lowest.toDouble());
-        Probability quarter = new Probability(0.25);
+        Probability quarter = new Probability("0.25");
         logger.info("  Quarter: " + quarter.toDouble());
         Probability third = new Probability(1.0d/3.0d);
         logger.info("  Third: " + third.toDouble());
-        Probability middle = new Probability(0.5);
+        Probability middle = new Probability("0.5");
         logger.info("  Middle: " + middle.toDouble());
         Probability threeQuarter = new Probability(0.75);
         logger.info("  Three Quarter: " + threeQuarter.toDouble());
