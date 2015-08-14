@@ -51,7 +51,7 @@
 
     <properties>
         <java-general-utilities-version>3.6</java-general-utilities-version>
-        <java-core-interfaces-version>3.2</java-core-interfaces-version>
+        <java-core-interfaces-version>3.3</java-core-interfaces-version>
     </properties>
 
     <dependencies>
