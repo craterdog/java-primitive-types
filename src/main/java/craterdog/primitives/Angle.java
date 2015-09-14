@@ -107,7 +107,7 @@ public final class Angle extends Primitive<Angle> {
      * @param angle The angle.
      * @return The inverted angle.
      */
-    static public Angle invert(Angle angle) {
+    static public Angle inverse(Angle angle) {
         return new Angle(angle.value - Math.PI);
     }
 
@@ -119,7 +119,7 @@ public final class Angle extends Primitive<Angle> {
      * @param angle The angle.
      * @return The negated angle.
      */
-    static public Angle negate(Angle angle) {
+    static public Angle negative(Angle angle) {
         return new Angle(-angle.value);
     }
 

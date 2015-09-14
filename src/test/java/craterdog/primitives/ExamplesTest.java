@@ -63,8 +63,8 @@ public class ExamplesTest {
         logger.info("  The value of pi/3 is: {}", piOver3);
         logger.info("  The value of pi/4 is: {}", piOver4);
         logger.info("  The value of pi/6 is: {}", piOver6);
-        logger.info("  The negative of pi/6 is: {}", Angle.negate(piOver6));
-        logger.info("  The inversion of pi/3 is: {}", Angle.invert(piOver3));
+        logger.info("  The negative of pi/6 is: {}", Angle.negative(piOver6));
+        logger.info("  The inversion of pi/3 is: {}", Angle.inverse(piOver3));
         logger.info("  The sum of pi/6 and pi/3 is: {}", Angle.sum(piOver6, piOver3));
         logger.info("  The difference of pi/3 and pi/2 is: {}", Angle.difference(piOver3, piOver2));
         logger.info("  The sine of pi/6 is: {}", Angle.sine(piOver6));

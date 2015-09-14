@@ -58,15 +58,15 @@ public class AngleTest {
             logger.info("  Angle: " + a);
             logger.info("  Normalized: " + angle.toString());
 
-            Angle inverted = Angle.invert(new Angle(angle.toString()));
+            Angle inverted = Angle.inverse(new Angle(angle.toString()));
             logger.info("  Inverted: " + inverted.toString());
-            Angle reinverted = Angle.invert(inverted);
+            Angle reinverted = Angle.inverse(inverted);
             logger.info("  Reinverted: " + reinverted.toString());
             assertEquals(angle, reinverted);
 
-            Angle negated = Angle.negate(new Angle(angle.toString()));
+            Angle negated = Angle.negative(new Angle(angle.toString()));
             logger.info("  Negated: " + negated.toString());
-            Angle renegated = Angle.negate(negated);
+            Angle renegated = Angle.negative(negated);
             logger.info("  Renegated: " + renegated.toString());
             assertEquals(angle, renegated);
 

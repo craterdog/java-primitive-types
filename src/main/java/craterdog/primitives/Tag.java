@@ -122,7 +122,7 @@ public final class Tag extends Primitive<Tag> {
      * @param tagSize The number of bytes in the tag.
      * @return The number of characters in the corresponding string representation of the tag.
      */
-    static public int calculateStringSize(int tagSize) {
+    static public int stringSize(int tagSize) {
         int numberOfBits = tagSize * 8;
         int stringSize = numberOfBits / 5;
         stringSize += numberOfBits % 5 > 0 ? 1 : 0;
