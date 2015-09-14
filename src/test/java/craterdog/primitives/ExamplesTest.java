@@ -140,7 +140,7 @@ public class ExamplesTest {
         TextString emptyText = new TextString();  // empty text string
         assert emptyText.isEmpty();
         TextString shortText = new TextString("abcde");
-        assert shortText.getNumberOfElements() == 5;
+        assert shortText.getSize() == 5;
 
         // Iterate through the characters
         for (Character c : shortText) {
@@ -159,7 +159,7 @@ public class ExamplesTest {
 
         // Create a binary string
         BinaryString randomBinary = new BinaryString(RandomUtils.generateRandomBytes(100));
-        assert randomBinary.getNumberOfElements() == 100;
+        assert randomBinary.getSize() == 100;
 
         // Format the bytes using various bases
         logger.info("  The binary string in base 2 is: {}\n", randomBinary.toString(2, "  "));

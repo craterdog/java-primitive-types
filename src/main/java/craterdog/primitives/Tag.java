@@ -9,6 +9,7 @@
  ************************************************************************/
 package craterdog.primitives;
 
+import craterdog.core.Primitive;
 import craterdog.utils.Base32Utils;
 import craterdog.utils.ByteUtils;
 import craterdog.utils.RandomUtils;
@@ -21,7 +22,7 @@ import craterdog.utils.RandomUtils;
  *
  * @author Derk Norton
  */
-public final class Tag implements Comparable<Tag> {
+public final class Tag extends Primitive<Tag> {
 
     static private final int DEFAULT_TAG_SIZE = 20;
 
@@ -112,35 +113,6 @@ public final class Tag implements Comparable<Tag> {
     @Override
     public int hashCode() {
         return hash;
-    }
-
-
-    /**
-     * Returns true if this tag is equal to the specified tag and false otherwise.
-     * Two tag are equal if they have exactly the same bytes.
-     *
-     * @param object The tag to be compared.
-     * @return true if the tags are equal and false otherwise.
-     */
-    @Override
-    public boolean equals(Object object) {
-        if (!(object instanceof Tag)) return false;
-        Tag that = (Tag) object;
-        if (this.hash != that.hash) return false;
-        return this.string.equals(that.string);
-    }
-
-
-    /**
-     * Returns an integer (signum) that tells whether this tag is greater than (1), less
-     * than (-1), or equal to (0) the specified tag.
-     *
-     * @param tag The tag with which to be compared.
-     * @return The resulting signum value.
-     */
-    @Override
-    public int compareTo(Tag tag) {
-        return Integer.signum(this.string.compareTo(tag.string));
     }
 
 

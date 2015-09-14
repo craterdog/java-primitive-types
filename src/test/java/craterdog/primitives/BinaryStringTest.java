@@ -121,11 +121,11 @@ public class BinaryStringTest {
         logger.info("Beginning testIsEmptyAndLengthAndGetNumberOfElements()...");
         BinaryString text = new BinaryString("", 2);
         assertTrue("The isEmpty methods are not consistent.", text.isEmpty());
-        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getNumberOfElements());
+        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getSize());
 
         text = new BinaryString("7ZQ8G6ZJZDV8T", 32);
         assertFalse("The isEmpty methods are not consistent.", text.isEmpty());
-        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getNumberOfElements());
+        assertEquals("The getNumberOfElements methods are not consistent.", text.toBytes().length, text.getSize());
         logger.info("Completed testIsEmptyAndLengthAndGetNumberOfElements().");
     }
 

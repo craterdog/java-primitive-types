@@ -10,6 +10,8 @@
 package craterdog.primitives;
 
 import craterdog.core.Composite;
+import craterdog.core.Iterator;
+import craterdog.core.Primitive;
 import craterdog.core.Sequential;
 import craterdog.utils.Base02Utils;
 import craterdog.utils.Base16Utils;
@@ -18,7 +20,6 @@ import craterdog.utils.Base64Utils;
 import craterdog.utils.ByteUtils;
 import java.util.Arrays;
 import java.util.BitSet;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
@@ -30,7 +31,7 @@ import java.util.NoSuchElementException;
  *
  * @author Derk Norton
  */
-public final class BinaryString implements Comparable<BinaryString>, Sequential<Byte>, Composite {
+public final class BinaryString extends Primitive<BinaryString> implements Sequential<Byte>, Composite {
 
     private final byte[] bytes;
 
@@ -116,12 +117,18 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
 
 
     @Override
+    public Iterator<Byte> createIterator() {
+        return new BinaryIterator();
+    }
+
+
+    @Override
     public int compareTo(BinaryString that) {
         if (that == null) return 1;
         if (this == that) return 0;  // same object
         int result = 0;
-        Iterator<Byte> thisIterator = this.iterator();
-        Iterator<Byte> thatIterator = that.iterator();
+        Iterator<Byte> thisIterator = this.createIterator();
+        Iterator<Byte> thatIterator = that.createIterator();
         while (thisIterator.hasNext() && thatIterator.hasNext()) {
             Byte thisElement = thisIterator.next();
             Byte thatElement = thatIterator.next();
@@ -133,7 +140,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
         }
         if (result == 0) {
             // same so far, check for different lengths
-            result = Integer.compare(this.getNumberOfElements(), that.getNumberOfElements());
+            result = Integer.compare(this.getSize(), that.getSize());
         }
         return result;
     }
@@ -216,13 +223,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
 
 
     @Override
-    public boolean isEmpty() {
-        return bytes.length == 0;
-    }
-
-
-    @Override
-    public int getNumberOfElements() {
+    public int getSize() {
         return bytes.length;
     }
 
@@ -238,13 +239,7 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
     }
 
 
-    @Override
-    public Iterator<Byte> iterator() {
-        return new BinaryIterator();
-    }
-
-
-    private final class BinaryIterator implements Iterator<Byte> {
+    private final class BinaryIterator extends Iterator<Byte> {
 
         int index;
 
@@ -253,12 +248,43 @@ public final class BinaryString implements Comparable<BinaryString>, Sequential<
         }
 
         @Override
+        public void toStart() {
+            this.index = 0;
+        }
+
+        @Override
+        public void toIndex(int index) {
+            if (index > 0) {
+                this.index = index - 1;  // convert to ordinal indexing
+            } else {
+                this.index = bytes.length + index;  // index from end of bytes
+            }
+        }
+
+        @Override
+        public void toEnd() {
+            this.index = bytes.length;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return index > 0;
+        }
+
+        @Override
+        public Byte getPrevious() {
+            if (index == 0) throw new NoSuchElementException();
+            Byte element = bytes[--index];
+            return element;
+        }
+
+        @Override
         public boolean hasNext() {
             return index < bytes.length;
         }
 
         @Override
-        public Byte next() {
+        public Byte getNext() {
             if (index == bytes.length) throw new NoSuchElementException();
             Byte element = bytes[index++];
             return element;

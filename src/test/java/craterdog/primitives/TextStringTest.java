@@ -94,7 +94,7 @@ public class TextStringTest {
 
 
     /**
-     * Test the isEmpty, length and getNumberOfElements methods.
+     * Test the isEmpty, length and getSize methods.
      */
     @Test
     public void testIsEmptyAndLengthAndGetNumberOfElements() {
@@ -103,13 +103,13 @@ public class TextStringTest {
         TextString text = new TextString(string);
         assertTrue("The isEmpty methods are not consistent.", text.isEmpty());
         assertEquals("The length methods are not consistent.", string.length(), text.length());
-        assertEquals("The getNumberOfElements methods are not consistent.", string.length(), text.getNumberOfElements());
+        assertEquals("The getSize methods are not consistent.", string.length(), text.getSize());
 
         string = "This a text string...";
         text = new TextString(string);
         assertFalse("The isEmpty methods are not consistent.", text.isEmpty());
         assertEquals("The length methods are not consistent.", string.length(), text.length());
-        assertEquals("The getNumberOfElements methods are not consistent.", string.length(), text.getNumberOfElements());
+        assertEquals("The getSize methods are not consistent.", string.length(), text.getSize());
         logger.info("Completed testIsEmptyAndLengthAndGetNumberOfElements().");
     }
 

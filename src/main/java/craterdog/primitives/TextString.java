@@ -9,8 +9,9 @@
  ************************************************************************/
 package craterdog.primitives;
 
+import craterdog.core.Iterator;
+import craterdog.core.Primitive;
 import craterdog.core.Sequential;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
@@ -21,7 +22,7 @@ import java.util.NoSuchElementException;
  *
  * @author Derk Norton
  */
-public final class TextString implements Comparable<TextString>, CharSequence, Sequential<Character> {
+public final class TextString extends Primitive<TextString> implements CharSequence, Sequential<Character> {
 
     private final String value;
 
@@ -76,25 +77,8 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
 
 
     @Override
-    public int compareTo(TextString that) {
-        if (that == null) return 1;
-        if (this == that) return 0;  // same object
-        return this.value.compareTo(that.value);
-    }
-
-
-    @Override
-    public boolean equals(Object object) {
-        if (object == null || !(object instanceof TextString)) return false;
-        TextString that = (TextString) object;
-        if (this == that) return true;  // same object
-        return this.value.equals(that.value);
-    }
-
-
-    @Override
-    public int hashCode() {
-        return value.hashCode();
+    public Iterator<Character> createIterator() {
+        return new TextIterator();
     }
 
 
@@ -123,13 +107,7 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
 
 
     @Override
-    public boolean isEmpty() {
-        return value.isEmpty();
-    }
-
-
-    @Override
-    public int getNumberOfElements() {
+    public int getSize() {
         return value.length();
     }
 
@@ -145,13 +123,7 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
     }
 
 
-    @Override
-    public Iterator<Character> iterator() {
-        return new TextIterator();
-    }
-
-
-    private final class TextIterator implements Iterator<Character> {
+    private final class TextIterator extends Iterator<Character> {
 
         int index;
 
@@ -160,13 +132,44 @@ public final class TextString implements Comparable<TextString>, CharSequence, S
         }
 
         @Override
-        public boolean hasNext() {
-            return index < length();
+        public void toStart() {
+            this.index = 0;
         }
 
         @Override
-        public Character next() {
-            if (index == length()) throw new NoSuchElementException();
+        public void toIndex(int index) {
+            if (index > 0) {
+                this.index = index - 1;  // convert to ordinal indexing
+            } else {
+                this.index = value.length() + index;  // index from end of bytes
+            }
+        }
+
+        @Override
+        public void toEnd() {
+            this.index = value.length();
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return index > 0;
+        }
+
+        @Override
+        public Character getPrevious() {
+            if (index == 0) throw new NoSuchElementException();
+            Character element = value.charAt(--index);
+            return element;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < value.length();
+        }
+
+        @Override
+        public Character getNext() {
+            if (index == value.length()) throw new NoSuchElementException();
             Character element = value.charAt(index++);
             return element;
         }

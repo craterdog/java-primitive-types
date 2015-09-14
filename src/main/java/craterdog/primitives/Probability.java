@@ -9,6 +9,7 @@
  ************************************************************************/
 package craterdog.primitives;
 
+import craterdog.core.Primitive;
 import craterdog.utils.RandomUtils;
 
 
@@ -19,7 +20,7 @@ import craterdog.utils.RandomUtils;
  *
  * @author Derk Norton
  */
-public final class Probability implements Comparable<Probability> {
+public final class Probability extends Primitive<Probability> {
 
     /*
      * This value is limited to the range [0.0d..1.0d].
@@ -118,8 +119,9 @@ public final class Probability implements Comparable<Probability> {
      * @return The result of the coin toss.
      */
     static public boolean coinToss(Probability probability) {
+        double p = probability.value;
         double toss = RandomUtils.pickRandomProbability();  // returns [0.0..1.0) so will never be 1.0
-        return probability.value > toss;
+        return p > toss;
     }
 
 
@@ -131,7 +133,8 @@ public final class Probability implements Comparable<Probability> {
      * @return The logical inverse of the probability.
      */
     static public Probability not(Probability probability) {
-        return new Probability(1.0d - probability.value);
+        double p = probability.value;
+        return new Probability(1.0d - p);
     }
 
 
@@ -144,7 +147,9 @@ public final class Probability implements Comparable<Probability> {
      * @return The logical conjunction of the two probabilities.
      */
     static public Probability and(Probability probability1, Probability probability2) {
-        return new Probability(probability1.value * probability2.value);
+        double p1 = probability1.value;
+        double p2 = probability2.value;
+        return new Probability(p1 * p2);
     }
 
 
@@ -157,7 +162,9 @@ public final class Probability implements Comparable<Probability> {
      * @return The material nonimplication of the two probabilities.
      */
     static public Probability sans(Probability probability1, Probability probability2) {
-        return and(probability1, not(probability2));
+        double p1 = probability1.value;
+        double p2 = probability2.value;
+        return new Probability(p1 * (1.0d - p2));
     }
 
 
@@ -170,7 +177,9 @@ public final class Probability implements Comparable<Probability> {
      * @return The logical disjunction of the two probabilities.
      */
     static public Probability or(Probability probability1, Probability probability2) {
-        return new Probability(probability1.value + probability2.value - and(probability1, probability2).value);
+        double p1 = probability1.value;
+        double p2 = probability2.value;
+        return new Probability(p1 + p2 - (p1 * p2));
     }
 
 
@@ -183,7 +192,9 @@ public final class Probability implements Comparable<Probability> {
      * @return The logical exclusive disjunction of the two probabilities.
      */
     static public Probability xor(Probability probability1, Probability probability2) {
-        return new Probability(sans(probability1, probability2).value + sans(probability2, probability1).value);
+        double p1 = probability1.value;
+        double p2 = probability2.value;
+        return new Probability(p1 * (1.0d - p2) + p2 * (1.0d - p1));
     }
 
 }

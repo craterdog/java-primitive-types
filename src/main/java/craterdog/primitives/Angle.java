@@ -9,13 +9,15 @@
  ************************************************************************/
 package craterdog.primitives;
 
+import craterdog.core.Primitive;
+
 
 /**
  * This class encapsulates radian based angles. It normalizes all angles to the range [-pi..pi).
  *
  * @author Derk Norton
  */
-public final class Angle implements Comparable<Angle> {
+public final class Angle extends Primitive<Angle> {
 
     /*
      * This constant defines how close two angles need to be before they are considered the same.
