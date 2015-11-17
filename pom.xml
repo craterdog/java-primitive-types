@@ -30,7 +30,7 @@
 
     <groupId>com.craterdog</groupId>
     <artifactId>java-primitive-types</artifactId>
-    <version>3.8-SNAPSHOT</version>
+    <version>3.8</version>
     <packaging>jar</packaging>
 
     <licenses>
@@ -97,7 +97,7 @@
         <connection>scm:git:git@github.com:craterdog/java-primitive-types.git</connection>
         <developerConnection>scm:git:git@github.com:craterdog/java-primitive-types.git</developerConnection>
         <url>git@github.com:craterdog/java-primitive-types.git</url>
-        <tag>HEAD</tag>
+        <tag>java-primitive-types-3.8</tag>
     </scm>
 
 </project>
