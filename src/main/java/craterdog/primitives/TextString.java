@@ -10,7 +10,6 @@
 package craterdog.primitives;
 
 import craterdog.core.Iterator;
-import craterdog.core.Primitive;
 import craterdog.core.Sequential;
 import java.util.NoSuchElementException;
 

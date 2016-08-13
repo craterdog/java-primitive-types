@@ -9,8 +9,6 @@
  ************************************************************************/
 package craterdog.primitives;
 
-import craterdog.core.Primitive;
-
 
 /**
  * This class encapsulates radian based angles. It normalizes all angles to the range [-pi..pi).

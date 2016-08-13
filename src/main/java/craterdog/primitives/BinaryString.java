@@ -11,7 +11,6 @@ package craterdog.primitives;
 
 import craterdog.core.Composite;
 import craterdog.core.Iterator;
-import craterdog.core.Primitive;
 import craterdog.core.Sequential;
 import craterdog.utils.Base02Utils;
 import craterdog.utils.Base16Utils;
@@ -31,7 +30,7 @@ import java.util.NoSuchElementException;
  *
  * @author Derk Norton
  */
-public final class BinaryString extends Primitive<BinaryString> implements Sequential<Byte>, Composite {
+public final class BinaryString extends Primitive<BinaryString> implements Sequential<Byte>, Composite<BinaryString> {
 
     private final byte[] bytes;
 
@@ -236,6 +235,14 @@ public final class BinaryString extends Primitive<BinaryString> implements Seque
             array[index++] = b;
         }
         return array;
+    }
+
+
+    @Override
+    public <T extends Composite<BinaryString>> T copy() {
+        @SuppressWarnings("unchecked")
+        T copy = (T) new BinaryString(bytes);
+        return copy;
     }
 
 

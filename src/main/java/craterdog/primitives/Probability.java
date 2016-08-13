@@ -9,7 +9,6 @@
  ************************************************************************/
 package craterdog.primitives;
 
-import craterdog.core.Primitive;
 import craterdog.utils.RandomUtils;
 
 
