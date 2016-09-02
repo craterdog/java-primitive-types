@@ -63,6 +63,10 @@ public class VersionStringTest {
         VersionString middle = new VersionString("1.2.3");
         assertEquals("1.2.4", VersionString.getNextVersion(middle).toString());
         assertEquals("1.3", VersionString.getNewVersion(middle, 2).toString());
+        int count = 1;
+        for (int version : middle) {
+            assertEquals(count++, version);
+        }
 
         try {
             VersionString negative = new VersionString(-1);
