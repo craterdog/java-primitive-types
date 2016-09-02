@@ -45,6 +45,11 @@ public final class VersionString extends Primitive<VersionString> implements Seq
     }
 
 
+    /**
+     * This constructor creates a version number from a string containing the version number.
+     *
+     * @param value A string containing the version number.
+     */
     public VersionString(String value) {
         String[] integers = value.split("\\.");
         int count = integers.length;
