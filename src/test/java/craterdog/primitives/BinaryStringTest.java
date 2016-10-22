@@ -62,7 +62,7 @@ public class BinaryStringTest {
         String base32String = "7ZQ8G6ZJZDV8T";
         text = new BinaryString(base32String, 32);
         assertEquals("The constructor and equals methods are incompatible.", base32String, text.toString(32));
-        String base64String = "\n" +
+        String base64String = "" +
                 "    aR0vNePXNOssIpkx8mTUZSN3dPF88VKzRzjUtXeMqkoCtVSgJjTOHpxbyfMMROAEBrTviql0hREkYUau\n" +
                 "    YPcTCq+YM9Z1aW7LlyQIqeb8Wk/RO1MrBeZNotcOabU2Ok2JKa8O4sqL3Xi091380gx6GeZHFVsBZK/R\n" +
                 "    4DsMkTWPUh8SvHMas9xvsldjl665qGBE7zgyKZ9OvaV4L/h3K4cNd0qaiFYEGhAxkNImFe9fpYDlgK9j\n" +
