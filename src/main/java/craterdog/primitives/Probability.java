@@ -69,7 +69,7 @@ public final class Probability extends Primitive<Probability> {
     @Override
     public int compareTo(Probability probability) {
         if (probability == null) return 1;
-        return new Double(value).compareTo(probability.value);
+        return Double.compare(value,probability.value);
     }
 
 
@@ -83,7 +83,7 @@ public final class Probability extends Primitive<Probability> {
 
     @Override
     public int hashCode() {
-        int hash = new Double(value).hashCode();
+        int hash = Double.hashCode(value);
         return hash;
     }
 

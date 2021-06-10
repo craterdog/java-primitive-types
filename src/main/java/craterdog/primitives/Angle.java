@@ -64,7 +64,7 @@ public final class Angle extends Primitive<Angle> {
     @Override
     public int compareTo(Angle angle) {
         if (angle == null) return 1;
-        return new Double(value).compareTo(angle.value);
+        return Double.compare(value, angle.value);
     }
 
 
@@ -78,7 +78,7 @@ public final class Angle extends Primitive<Angle> {
 
     @Override
     public int hashCode() {
-        return new Double(value).hashCode();
+        return Double.hashCode(value);
     }
 
 

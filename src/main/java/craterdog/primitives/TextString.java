@@ -106,6 +106,12 @@ public final class TextString extends Primitive<TextString> implements CharSeque
 
 
     @Override
+    public boolean isEmpty() {
+        return Sequential.super.isEmpty();
+    }
+
+
+    @Override
     public int getSize() {
         return value.length();
     }
