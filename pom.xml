@@ -83,8 +83,8 @@
                         <configuration>
                             <detectJavaApiLink>true</detectJavaApiLink>
                             <links>
-                                <link>https://craterdog.github.io/java-general-utilities/latest</link>
-                                <link>https://craterdog.github.io/java-core-interfaces/latest</link>
+                                <link>https://craterdog.github.io/java-general-utilities/latest/</link>
+                                <link>https://craterdog.github.io/java-core-interfaces/latest/</link>
                             </links>
                         </configuration>
                     </plugin>
