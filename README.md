@@ -19,10 +19,10 @@ interface
 ### Quick Links
 For more detail on this project click on the following links:
 
- * [javadocs](http://craterdog.github.io/java-primitive-types/latest/index.html)
+ * [javadocs](https://craterdog.github.io/java-primitive-types/latest/index.html)
  * [wiki](https://github.com/craterdog/java-primitive-types/wiki)
  * [release notes](https://github.com/craterdog/java-primitive-types/wiki/Releases)
- * [website](http://craterdog.com)
+ * [website](https://craterdog.com)
 
 ### Getting Started
 To get started using these classes, include the following dependency in your maven pom.xml file:
@@ -44,5 +44,5 @@ _Crater Dog Technologies™_ would like to recognize and thank the following
 companies for their contributions to the development and testing of various
 components within this project:
 
- * _Blackhawk Network_ (http://blackhawknetwork.com)
+ * _Blackhawk Network_ (https://blackhawknetwork.com)
 
