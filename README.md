@@ -1,5 +1,7 @@
 ![Java Primitive Types](https://github.com/craterdog/java-primitive-types/blob/master/docs/images/CavePainting.jpg)
 
+# THIS REPOSITORY HAS BEEN ARCHIVED AND IS NO LONGER SUPPORTED
+
 ### Java Primitive Types
 This project contains a set of additional Java primitive type classes. Each class follows the same immutability
 conventions that the native Java primitive types support. They also provide a default implementation
